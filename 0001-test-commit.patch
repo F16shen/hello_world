@@ -1,0 +1,25 @@
+From 54e5d94d351656536836796394d39d1189ede0ad Mon Sep 17 00:00:00 2001
+From: lixin <lixin@chengjieos.com>
+Date: Tue, 13 Oct 2020 17:29:35 +0800
+Subject: [PATCH] test commit
+
+---
+ hello.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100755 hello.py
+
+diff --git a/hello.py b/hello.py
+new file mode 100755
+index 0000000..5aad21d
+--- /dev/null
++++ b/hello.py
+@@ -0,0 +1,6 @@
++#!/usr/bin/python3.6
++
++print('Hello,World')
++print('test')
++print('commit')
++print('patch0')
+-- 
+2.18.2
+
