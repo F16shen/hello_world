@@ -1,0 +1,597 @@
+From 9bd5185e7b81ed985405d26ac1cef8df225c1ac5 Mon Sep 17 00:00:00 2001
+From: lixin <lixin@chengjieos.com>
+Date: Tue, 13 Oct 2020 18:44:23 +0800
+Subject: [PATCH] hello RPM
+
+---
+ hello_world/BUILD/helloworld-1.0.0/helloworld | Bin 0 -> 12816 bytes
+ hello_world/BUILD/helloworld-1.0.0/main.c     |   5 +++
+ hello_world/BUILD/helloworld-1.0.0/main.o     | Bin 0 -> 1368 bytes
+ hello_world/BUILD/helloworld-1.0.0/makefile   |  11 ++++++
+ hello_world/BUILD/helloworld-1.0.0/print.c    |   4 ++
+ hello_world/BUILD/helloworld-1.0.0/print.h    |   2 +
+ hello_world/BUILD/helloworld-1.0.0/print.o    | Bin 0 -> 1504 bytes
+ hello_world/SOURCES/helloworld-1.0.0.tar.gz   | Bin 0 -> 422 bytes
+ hello_world/SOURCES/helloworld-1.0.0/main.c   |   5 +++
+ hello_world/SOURCES/helloworld-1.0.0/makefile |  11 ++++++
+ hello_world/SOURCES/helloworld-1.0.0/print.c  |   4 ++
+ hello_world/SOURCES/helloworld-1.0.0/print.h  |   2 +
+ hello_world/SPECS/helloworld.spec             |  36 ++++++++++++++++++
+ rpmbuild/BUILD/helloworld-1.0.0/helloworld    | Bin 0 -> 12816 bytes
+ rpmbuild/BUILD/helloworld-1.0.0/main.c        |   5 +++
+ rpmbuild/BUILD/helloworld-1.0.0/main.o        | Bin 0 -> 1368 bytes
+ rpmbuild/BUILD/helloworld-1.0.0/makefile      |  11 ++++++
+ rpmbuild/BUILD/helloworld-1.0.0/print.c       |   4 ++
+ rpmbuild/BUILD/helloworld-1.0.0/print.h       |   2 +
+ rpmbuild/BUILD/helloworld-1.0.0/print.o       | Bin 0 -> 1504 bytes
+ rpmbuild/SOURCES/helloworld-1.0.0.tar.gz      | Bin 0 -> 422 bytes
+ rpmbuild/SOURCES/helloworld-1.0.0/main.c      |   5 +++
+ rpmbuild/SOURCES/helloworld-1.0.0/makefile    |  11 ++++++
+ rpmbuild/SOURCES/helloworld-1.0.0/print.c     |   4 ++
+ rpmbuild/SOURCES/helloworld-1.0.0/print.h     |   2 +
+ rpmbuild/SPECS/helloworld.spec                |  36 ++++++++++++++++++
+ 26 files changed, 160 insertions(+)
+ create mode 100755 hello_world/BUILD/helloworld-1.0.0/helloworld
+ create mode 100644 hello_world/BUILD/helloworld-1.0.0/main.c
+ create mode 100644 hello_world/BUILD/helloworld-1.0.0/main.o
+ create mode 100644 hello_world/BUILD/helloworld-1.0.0/makefile
+ create mode 100644 hello_world/BUILD/helloworld-1.0.0/print.c
+ create mode 100644 hello_world/BUILD/helloworld-1.0.0/print.h
+ create mode 100644 hello_world/BUILD/helloworld-1.0.0/print.o
+ create mode 100644 hello_world/SOURCES/helloworld-1.0.0.tar.gz
+ create mode 100644 hello_world/SOURCES/helloworld-1.0.0/main.c
+ create mode 100644 hello_world/SOURCES/helloworld-1.0.0/makefile
+ create mode 100644 hello_world/SOURCES/helloworld-1.0.0/print.c
+ create mode 100644 hello_world/SOURCES/helloworld-1.0.0/print.h
+ create mode 100644 hello_world/SPECS/helloworld.spec
+ create mode 100755 rpmbuild/BUILD/helloworld-1.0.0/helloworld
+ create mode 100644 rpmbuild/BUILD/helloworld-1.0.0/main.c
+ create mode 100644 rpmbuild/BUILD/helloworld-1.0.0/main.o
+ create mode 100644 rpmbuild/BUILD/helloworld-1.0.0/makefile
+ create mode 100644 rpmbuild/BUILD/helloworld-1.0.0/print.c
+ create mode 100644 rpmbuild/BUILD/helloworld-1.0.0/print.h
+ create mode 100644 rpmbuild/BUILD/helloworld-1.0.0/print.o
+ create mode 100644 rpmbuild/SOURCES/helloworld-1.0.0.tar.gz
+ create mode 100644 rpmbuild/SOURCES/helloworld-1.0.0/main.c
+ create mode 100644 rpmbuild/SOURCES/helloworld-1.0.0/makefile
+ create mode 100644 rpmbuild/SOURCES/helloworld-1.0.0/print.c
+ create mode 100644 rpmbuild/SOURCES/helloworld-1.0.0/print.h
+ create mode 100644 rpmbuild/SPECS/helloworld.spec
+
+diff --git a/hello_world/BUILD/helloworld-1.0.0/helloworld b/hello_world/BUILD/helloworld-1.0.0/helloworld
+new file mode 100755
+index 0000000000000000000000000000000000000000..c4f7a10e86562493a906321a4beb57250268f6b9
+GIT binary patch
+literal 12816
+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
+JbtpKJ;-4&75$yl~
+
+literal 0
+HcmV?d00001
+
+diff --git a/hello_world/BUILD/helloworld-1.0.0/main.c b/hello_world/BUILD/helloworld-1.0.0/main.c
+new file mode 100644
+index 0000000..c099150
+--- /dev/null
++++ b/hello_world/BUILD/helloworld-1.0.0/main.c
+@@ -0,0 +1,5 @@
++#include"print.h"
++int main(void){
++	printhello();
++	return 0;
++}
+diff --git a/hello_world/BUILD/helloworld-1.0.0/main.o b/hello_world/BUILD/helloworld-1.0.0/main.o
+new file mode 100644
+index 0000000000000000000000000000000000000000..b5e29608e5895538f47ef812d521294ed6c00693
+GIT binary patch
+literal 1368
+zcmbtTJxc>Y5S>dj@hcKVLD1qVQP3q9L8663f***eC;=@*E^#%%+(mL%L>ntbJAaC$
+zrC{UFun{b^vk-LVZr7~q+2{+qGy87d%<k;wY+-dVW*8u0z#Ozzk_Fg~wfubG=Aj3=
+zp}2hYbW7`JngVb49+nD)S#xY@tvGJx*c7wOY{r_gtgK~@6)N04T&eQ)t?<+2^f)O8
+zXhImLn_x84#&A!v;~F<If*cLPAWieV>5Et)mDs=lTK@t%LmRw)M177&o)938zbM2p
+zQxxKmh@vq|@)y4S2Ty0{SN0Q}5xEqO^p9vH9J}hWa$w-NQFZ+auhr_%C1UBCI&r*z
+zgfJCexk3QuojAT-LhCm|TajLa*KFqVrVni2_HAG#&jVJjI}Ue|bL&25c(;?DZ<mjN
+z1>wB1chImMF3SDe(7x#o^$zEeBgj65t1wpjWQTFkt>tm3co2_!NRZSkqU2kW{HWmd
+z7f}>C-H5bb^aOg8^RIdfwUjf1Lxrrb^Rm9QvnZ0jsy|m3im%763;nk@gWRRi<P<Hr
+zvVW3ZK_{yJkD`$5GxeYTEmALe3e#&N1$Q(dUP2SRd(!H9%B%ODBsW@p;t2Zr`;d#$
+Nzlp$|K-HRb{U;?iQse*t
+
+literal 0
+HcmV?d00001
+
+diff --git a/hello_world/BUILD/helloworld-1.0.0/makefile b/hello_world/BUILD/helloworld-1.0.0/makefile
+new file mode 100644
+index 0000000..ce42ce6
+--- /dev/null
++++ b/hello_world/BUILD/helloworld-1.0.0/makefile
+@@ -0,0 +1,11 @@
++objects = main.o print.o
++
++Hello:$(objects)
++	gcc -o helloworld main.o print.o
++main.o:main.c print.h
++	gcc -c main.c
++print.o:print.c print.h
++	gcc -c print.c
++
++clean:
++	rm helloworld $(objects)
+diff --git a/hello_world/BUILD/helloworld-1.0.0/print.c b/hello_world/BUILD/helloworld-1.0.0/print.c
+new file mode 100644
+index 0000000..1da4778
+--- /dev/null
++++ b/hello_world/BUILD/helloworld-1.0.0/print.c
+@@ -0,0 +1,4 @@
++#include"print.h"
++void printhello(){
++	printf("hello,world\n");
++}
+diff --git a/hello_world/BUILD/helloworld-1.0.0/print.h b/hello_world/BUILD/helloworld-1.0.0/print.h
+new file mode 100644
+index 0000000..7aedc5b
+--- /dev/null
++++ b/hello_world/BUILD/helloworld-1.0.0/print.h
+@@ -0,0 +1,2 @@
++#include<stdio.h>
++void printhello();
+diff --git a/hello_world/BUILD/helloworld-1.0.0/print.o b/hello_world/BUILD/helloworld-1.0.0/print.o
+new file mode 100644
+index 0000000000000000000000000000000000000000..9e7534e2f5c9682f3351ad3662043b959398c9b5
+GIT binary patch
+literal 1504
+zcmb_bO-~d-5Utsf4|OpM;h=%ToD3w;VK5<!2eP_R2q73T#1k>Y(z?Xm9Wv8I^y1CL
+zgUS8`|A_}L9{m$09`#NF^>(_Jv1u;Ex0$Y2udAv*s`ulQt*4bBAVENDbm56g^tE!q
+z8w1*)398cW#^+z(;Qz+Z-}~Oyold&&F3mazMC;Aw!)R`Odv`vns|PBMmY3qyI9`sU
+zxn^7U-fSM~XD^DW#g%zfn8v^eKI~9%QVV9PW8;0^&@5~CfJqFG?$kb2niHd29030c
+z;4C-j@0o8p^q!O`<ev{ASMnjG5ueOe#;(x)I}T~|Qv6L;rb_!9oSik?Q|(eT3rE>u
+z&!|>m2hE_PW0Om$?DQ53!Z8OQK%2o&&k97$0qCVCK&0~bU6bsyHCbWX!ZO`Sl+h=K
+z)InkrQu}#MDoYEem3F(j$8){ZXvJ@1F*ix;Ee9Y?w_m-^lCB;s`X7dfYv2vIH``zh
+zkozpWB33x;41ef)gTFHV*gwgV6>(>fq_cOee&6cui+XP7U1Q4*<ppM_dENY&b5Zl3
+z-mx$1SDBaLuD{BY(BzyFyJv~3OTO60Hed3@ei7nW$rJe{6KL-K`!=91f!50Xi@d|c
+z*T2XXls=(<$d!E2eQTrk4-AZPyW!i+@n3cGp}D<diGJF=dvHpy@=(G1^ySy>{*z&3
+HLEQXvw2xW1
+
+literal 0
+HcmV?d00001
+
+diff --git a/hello_world/SOURCES/helloworld-1.0.0.tar.gz b/hello_world/SOURCES/helloworld-1.0.0.tar.gz
+new file mode 100644
+index 0000000000000000000000000000000000000000..e2c062a45db8beeda50819de67751c64956063ec
+GIT binary patch
+literal 422
+zcmV;X0a^YZiwFQ$#DiY|1MQbjPlGTNz`3rUqCpQVao9p>6Q-X15ME~K1P63sOb^EI
+zE`R4TBpk#|=lflnmPgw0-mfnURUGSAoyEb7+QcT;#`ur|A-r;=!lV0Ri$Pt%h+qz-
+zjzOsFF~`8(51ggLc9SnMjE!WmQrSA`jT?IYM+pz}zs{mGx8<07lnLgX_2!=v+UB1)
+ztXQWWaa{wGF%QwlKhOU~l*)J;D6`IcXrdP#1-P13wP8))(4?9!Ewfs=s><adHK%j*
+zj!yjpfN#;`e>mnIL;e%yHU7KYqrCE;Q}F*7wEo|0@*vW7c-QrR4vwEM9siR>l#bi}
+zhy544^<NO;7XCBN2>5>ty8XWxa9IRac@gZI|L!iBWGdfgDJIbT&w(%eU#Vpjs}c7Y
+z^4}3`*Z+mf%Kq<g2mC(<`te!Ge1mT*=WShgep@4SUsi^HX*Cg3G<lK|&ourlnZtML
+zsb9B{W;JZylXb8}O|akm(d>jZ>j=qMEmFU@aFYEk_YQRGZwCMX000000000000000
+Q006(04-9>kY5*tz0AG{PumAu6
+
+literal 0
+HcmV?d00001
+
+diff --git a/hello_world/SOURCES/helloworld-1.0.0/main.c b/hello_world/SOURCES/helloworld-1.0.0/main.c
+new file mode 100644
+index 0000000..c099150
+--- /dev/null
++++ b/hello_world/SOURCES/helloworld-1.0.0/main.c
+@@ -0,0 +1,5 @@
++#include"print.h"
++int main(void){
++	printhello();
++	return 0;
++}
+diff --git a/hello_world/SOURCES/helloworld-1.0.0/makefile b/hello_world/SOURCES/helloworld-1.0.0/makefile
+new file mode 100644
+index 0000000..ce42ce6
+--- /dev/null
++++ b/hello_world/SOURCES/helloworld-1.0.0/makefile
+@@ -0,0 +1,11 @@
++objects = main.o print.o
++
++Hello:$(objects)
++	gcc -o helloworld main.o print.o
++main.o:main.c print.h
++	gcc -c main.c
++print.o:print.c print.h
++	gcc -c print.c
++
++clean:
++	rm helloworld $(objects)
+diff --git a/hello_world/SOURCES/helloworld-1.0.0/print.c b/hello_world/SOURCES/helloworld-1.0.0/print.c
+new file mode 100644
+index 0000000..1da4778
+--- /dev/null
++++ b/hello_world/SOURCES/helloworld-1.0.0/print.c
+@@ -0,0 +1,4 @@
++#include"print.h"
++void printhello(){
++	printf("hello,world\n");
++}
+diff --git a/hello_world/SOURCES/helloworld-1.0.0/print.h b/hello_world/SOURCES/helloworld-1.0.0/print.h
+new file mode 100644
+index 0000000..7aedc5b
+--- /dev/null
++++ b/hello_world/SOURCES/helloworld-1.0.0/print.h
+@@ -0,0 +1,2 @@
++#include<stdio.h>
++void printhello();
+diff --git a/hello_world/SPECS/helloworld.spec b/hello_world/SPECS/helloworld.spec
+new file mode 100644
+index 0000000..914ea6a
+--- /dev/null
++++ b/hello_world/SPECS/helloworld.spec
+@@ -0,0 +1,36 @@
++Summary:	rpm helloworld
++Name:		helloworld
++Version:	1.0.0
++Release:	1%{?dist}
++License:	GPL
++#URL:
++Source0:	%{name}-%{version}.tar.gz
++#BuildRequires:
++#Requires:  
++
++%description
++print helloworld
++
++%prep
++%autosetup
++
++
++%build
++make
++
++%install
++mkdir -p $RPM_BUILD_ROOT/usr/bin
++cp $RPM_BUILD_DIR/%{name}-%{version}/helloworld $RPM_BUILD_ROOT/usr/bin
++
++%clean
++rm -rf %RPM_BUILD_ROOT
++
++
++%files
++%defattr(-,root,root,-)
++%doc
++/usr/bin/helloworld
++
++
++
++%changelog
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/helloworld b/rpmbuild/BUILD/helloworld-1.0.0/helloworld
+new file mode 100755
+index 0000000000000000000000000000000000000000..c4f7a10e86562493a906321a4beb57250268f6b9
+GIT binary patch
+literal 12816
+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
+JbtpKJ;-4&75$yl~
+
+literal 0
+HcmV?d00001
+
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/main.c b/rpmbuild/BUILD/helloworld-1.0.0/main.c
+new file mode 100644
+index 0000000..c099150
+--- /dev/null
++++ b/rpmbuild/BUILD/helloworld-1.0.0/main.c
+@@ -0,0 +1,5 @@
++#include"print.h"
++int main(void){
++	printhello();
++	return 0;
++}
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/main.o b/rpmbuild/BUILD/helloworld-1.0.0/main.o
+new file mode 100644
+index 0000000000000000000000000000000000000000..b5e29608e5895538f47ef812d521294ed6c00693
+GIT binary patch
+literal 1368
+zcmbtTJxc>Y5S>dj@hcKVLD1qVQP3q9L8663f***eC;=@*E^#%%+(mL%L>ntbJAaC$
+zrC{UFun{b^vk-LVZr7~q+2{+qGy87d%<k;wY+-dVW*8u0z#Ozzk_Fg~wfubG=Aj3=
+zp}2hYbW7`JngVb49+nD)S#xY@tvGJx*c7wOY{r_gtgK~@6)N04T&eQ)t?<+2^f)O8
+zXhImLn_x84#&A!v;~F<If*cLPAWieV>5Et)mDs=lTK@t%LmRw)M177&o)938zbM2p
+zQxxKmh@vq|@)y4S2Ty0{SN0Q}5xEqO^p9vH9J}hWa$w-NQFZ+auhr_%C1UBCI&r*z
+zgfJCexk3QuojAT-LhCm|TajLa*KFqVrVni2_HAG#&jVJjI}Ue|bL&25c(;?DZ<mjN
+z1>wB1chImMF3SDe(7x#o^$zEeBgj65t1wpjWQTFkt>tm3co2_!NRZSkqU2kW{HWmd
+z7f}>C-H5bb^aOg8^RIdfwUjf1Lxrrb^Rm9QvnZ0jsy|m3im%763;nk@gWRRi<P<Hr
+zvVW3ZK_{yJkD`$5GxeYTEmALe3e#&N1$Q(dUP2SRd(!H9%B%ODBsW@p;t2Zr`;d#$
+Nzlp$|K-HRb{U;?iQse*t
+
+literal 0
+HcmV?d00001
+
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/makefile b/rpmbuild/BUILD/helloworld-1.0.0/makefile
+new file mode 100644
+index 0000000..ce42ce6
+--- /dev/null
++++ b/rpmbuild/BUILD/helloworld-1.0.0/makefile
+@@ -0,0 +1,11 @@
++objects = main.o print.o
++
++Hello:$(objects)
++	gcc -o helloworld main.o print.o
++main.o:main.c print.h
++	gcc -c main.c
++print.o:print.c print.h
++	gcc -c print.c
++
++clean:
++	rm helloworld $(objects)
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/print.c b/rpmbuild/BUILD/helloworld-1.0.0/print.c
+new file mode 100644
+index 0000000..1da4778
+--- /dev/null
++++ b/rpmbuild/BUILD/helloworld-1.0.0/print.c
+@@ -0,0 +1,4 @@
++#include"print.h"
++void printhello(){
++	printf("hello,world\n");
++}
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/print.h b/rpmbuild/BUILD/helloworld-1.0.0/print.h
+new file mode 100644
+index 0000000..7aedc5b
+--- /dev/null
++++ b/rpmbuild/BUILD/helloworld-1.0.0/print.h
+@@ -0,0 +1,2 @@
++#include<stdio.h>
++void printhello();
+diff --git a/rpmbuild/BUILD/helloworld-1.0.0/print.o b/rpmbuild/BUILD/helloworld-1.0.0/print.o
+new file mode 100644
+index 0000000000000000000000000000000000000000..9e7534e2f5c9682f3351ad3662043b959398c9b5
+GIT binary patch
+literal 1504
+zcmb_bO-~d-5Utsf4|OpM;h=%ToD3w;VK5<!2eP_R2q73T#1k>Y(z?Xm9Wv8I^y1CL
+zgUS8`|A_}L9{m$09`#NF^>(_Jv1u;Ex0$Y2udAv*s`ulQt*4bBAVENDbm56g^tE!q
+z8w1*)398cW#^+z(;Qz+Z-}~Oyold&&F3mazMC;Aw!)R`Odv`vns|PBMmY3qyI9`sU
+zxn^7U-fSM~XD^DW#g%zfn8v^eKI~9%QVV9PW8;0^&@5~CfJqFG?$kb2niHd29030c
+z;4C-j@0o8p^q!O`<ev{ASMnjG5ueOe#;(x)I}T~|Qv6L;rb_!9oSik?Q|(eT3rE>u
+z&!|>m2hE_PW0Om$?DQ53!Z8OQK%2o&&k97$0qCVCK&0~bU6bsyHCbWX!ZO`Sl+h=K
+z)InkrQu}#MDoYEem3F(j$8){ZXvJ@1F*ix;Ee9Y?w_m-^lCB;s`X7dfYv2vIH``zh
+zkozpWB33x;41ef)gTFHV*gwgV6>(>fq_cOee&6cui+XP7U1Q4*<ppM_dENY&b5Zl3
+z-mx$1SDBaLuD{BY(BzyFyJv~3OTO60Hed3@ei7nW$rJe{6KL-K`!=91f!50Xi@d|c
+z*T2XXls=(<$d!E2eQTrk4-AZPyW!i+@n3cGp}D<diGJF=dvHpy@=(G1^ySy>{*z&3
+HLEQXvw2xW1
+
+literal 0
+HcmV?d00001
+
+diff --git a/rpmbuild/SOURCES/helloworld-1.0.0.tar.gz b/rpmbuild/SOURCES/helloworld-1.0.0.tar.gz
+new file mode 100644
+index 0000000000000000000000000000000000000000..e2c062a45db8beeda50819de67751c64956063ec
+GIT binary patch
+literal 422
+zcmV;X0a^YZiwFQ$#DiY|1MQbjPlGTNz`3rUqCpQVao9p>6Q-X15ME~K1P63sOb^EI
+zE`R4TBpk#|=lflnmPgw0-mfnURUGSAoyEb7+QcT;#`ur|A-r;=!lV0Ri$Pt%h+qz-
+zjzOsFF~`8(51ggLc9SnMjE!WmQrSA`jT?IYM+pz}zs{mGx8<07lnLgX_2!=v+UB1)
+ztXQWWaa{wGF%QwlKhOU~l*)J;D6`IcXrdP#1-P13wP8))(4?9!Ewfs=s><adHK%j*
+zj!yjpfN#;`e>mnIL;e%yHU7KYqrCE;Q}F*7wEo|0@*vW7c-QrR4vwEM9siR>l#bi}
+zhy544^<NO;7XCBN2>5>ty8XWxa9IRac@gZI|L!iBWGdfgDJIbT&w(%eU#Vpjs}c7Y
+z^4}3`*Z+mf%Kq<g2mC(<`te!Ge1mT*=WShgep@4SUsi^HX*Cg3G<lK|&ourlnZtML
+zsb9B{W;JZylXb8}O|akm(d>jZ>j=qMEmFU@aFYEk_YQRGZwCMX000000000000000
+Q006(04-9>kY5*tz0AG{PumAu6
+
+literal 0
+HcmV?d00001
+
+diff --git a/rpmbuild/SOURCES/helloworld-1.0.0/main.c b/rpmbuild/SOURCES/helloworld-1.0.0/main.c
+new file mode 100644
+index 0000000..c099150
+--- /dev/null
++++ b/rpmbuild/SOURCES/helloworld-1.0.0/main.c
+@@ -0,0 +1,5 @@
++#include"print.h"
++int main(void){
++	printhello();
++	return 0;
++}
+diff --git a/rpmbuild/SOURCES/helloworld-1.0.0/makefile b/rpmbuild/SOURCES/helloworld-1.0.0/makefile
+new file mode 100644
+index 0000000..ce42ce6
+--- /dev/null
++++ b/rpmbuild/SOURCES/helloworld-1.0.0/makefile
+@@ -0,0 +1,11 @@
++objects = main.o print.o
++
++Hello:$(objects)
++	gcc -o helloworld main.o print.o
++main.o:main.c print.h
++	gcc -c main.c
++print.o:print.c print.h
++	gcc -c print.c
++
++clean:
++	rm helloworld $(objects)
+diff --git a/rpmbuild/SOURCES/helloworld-1.0.0/print.c b/rpmbuild/SOURCES/helloworld-1.0.0/print.c
+new file mode 100644
+index 0000000..1da4778
+--- /dev/null
++++ b/rpmbuild/SOURCES/helloworld-1.0.0/print.c
+@@ -0,0 +1,4 @@
++#include"print.h"
++void printhello(){
++	printf("hello,world\n");
++}
+diff --git a/rpmbuild/SOURCES/helloworld-1.0.0/print.h b/rpmbuild/SOURCES/helloworld-1.0.0/print.h
+new file mode 100644
+index 0000000..7aedc5b
+--- /dev/null
++++ b/rpmbuild/SOURCES/helloworld-1.0.0/print.h
+@@ -0,0 +1,2 @@
++#include<stdio.h>
++void printhello();
+diff --git a/rpmbuild/SPECS/helloworld.spec b/rpmbuild/SPECS/helloworld.spec
+new file mode 100644
+index 0000000..914ea6a
+--- /dev/null
++++ b/rpmbuild/SPECS/helloworld.spec
+@@ -0,0 +1,36 @@
++Summary:	rpm helloworld
++Name:		helloworld
++Version:	1.0.0
++Release:	1%{?dist}
++License:	GPL
++#URL:
++Source0:	%{name}-%{version}.tar.gz
++#BuildRequires:
++#Requires:  
++
++%description
++print helloworld
++
++%prep
++%autosetup
++
++
++%build
++make
++
++%install
++mkdir -p $RPM_BUILD_ROOT/usr/bin
++cp $RPM_BUILD_DIR/%{name}-%{version}/helloworld $RPM_BUILD_ROOT/usr/bin
++
++%clean
++rm -rf %RPM_BUILD_ROOT
++
++
++%files
++%defattr(-,root,root,-)
++%doc
++/usr/bin/helloworld
++
++
++
++%changelog
+-- 
+2.18.2
+
