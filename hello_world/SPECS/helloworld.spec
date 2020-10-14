@@ -1,7 +1,7 @@
 Summary:	rpm helloworld
 Name:		helloworld
-Version:	1.0.0
-Release:	1%{?dist}
+Version:	1.0.1
+Release:	2%{?dist}
 License:	GPL
 #URL:
 Source0:	%{name}-%{version}.tar.gz
@@ -34,3 +34,5 @@ rm -rf %RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Oct 14 2020 Li xin <601998977@qq.com> 1.0.1
+- add 1 line
